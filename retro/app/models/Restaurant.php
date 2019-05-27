@@ -19,7 +19,7 @@ class Restaurant{
             $id_owner = Input::post('id_owner');
             
 
-            $sql = "INSERT INTO tb_resto(id_resto, nama_restoran, jenis, alamat_resto, jadwal_buka, jadwal_tutup, gambar_resto, deskripsi,id_owner) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO tb_resto(id_resto, nama_restoran, jenis, alamat_resto, jadwal_buka, jadwal_tutup, gambar_resto, deskripsi, id_owner) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id_resto, $nama_restoran, $jenis, $alamat_resto, $jadwal_buka, $jadwal_tutup, str_replace('public/', '', $gambar_resto), $deskripsi, $id_owner]);

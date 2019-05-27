@@ -7,7 +7,7 @@ spl_autoload_register(function($str){
 
 // kalo gak ada config.php, ganti aja nama config.example.php
 // baru ubah variable config di config.php untuk setting databasenya
-require_once BASE_PATH.'app/config.php';
+require_once BASE_PATH.'app/config.example.php';
 
 // konfigurasi database
 DB::getInstance($config['host'], $config['user'], $config['pass'], $config['dbname']);
