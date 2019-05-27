@@ -12,7 +12,6 @@ class CustomerController{
 				'sql' => 'SELECT * FROM tb_customer'
 			]
 		]);
-
 		$tabel->addRow('No',function($data,$index){
 			return $index+1;
 		})
