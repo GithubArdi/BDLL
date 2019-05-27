@@ -5,7 +5,7 @@
 </center>
 
 <form action="" method="POST">
-  <div class="container">
+  <div class="container" style="width: 30%;">
     <?php echo Session::flash('error'); ?>
                         <form action="<?php echo base_url('customer/create') ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
