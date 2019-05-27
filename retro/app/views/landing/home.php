@@ -69,7 +69,7 @@
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
-		                                <span><?php echo $item->harga_menu ?></span>
+		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
 		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
@@ -114,7 +114,7 @@
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
-		                                <span><?php echo $item->harga_menu ?></span>
+		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
 		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
@@ -204,7 +204,7 @@
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
-		                                <span><?php echo $item->harga_menu ?></span>
+		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
 		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
