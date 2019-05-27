@@ -4,15 +4,18 @@ class LandingController
 	private $akun;
 	private $restaurant;
 	private $menu;
-
+	private $customer;
 	function __construct()
 	{
 		$this->akun = model('akun');
 		$this->restaurant = model('restaurant');
 		$this->menu = model('menu');
+		$this->customer = model('customer');
 	}
 
 	function index(){
+		checkIfNotLogin();
+
 		$data = [
 			'title' => 'Beranda',
 			'restaurant' => $this->restaurant->getData()
@@ -106,9 +109,16 @@ class LandingController
 
 		if($valid->run()){
 			if($this->akun->login($user, $pass)){
+				Session::sess('admin', true);
 				Session::sess('login', true);
 				redirect('control-panel');
-			}else{
+			}
+			else if ($this->customer->login($user, $pass)){
+				Session::sess('admin', false);
+				Session::sess('login', true);
+				redirect('');
+			}
+			else{
 				msg('Username atau password Anda salah!', 'danger');
 				redirect('login');
 			}
@@ -128,4 +138,8 @@ class LandingController
 
         return view('landing/register', $data);
     }
+    public function logout(){
+			session_destroy();
+			redirect('login');
+	}
 }

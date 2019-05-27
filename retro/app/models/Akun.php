@@ -12,6 +12,8 @@ class Akun{
 		}
 	}
 
+    
+
 	// function getById($id){
  //        try {
  //            $sql = "SELECT 

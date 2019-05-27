@@ -30,7 +30,7 @@ class Customer{
     }
     function login($user, $pass){
         try {
-            $sql = "SELECT * FROM tb_ WHERE username = ? AND password = ?";
+            $sql = "SELECT * FROM tb_customer WHERE username = ? AND password = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$user, $pass]);
             return $prep->rowCount();

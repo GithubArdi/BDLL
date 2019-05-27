@@ -1,10 +1,15 @@
 <?php 
 	Class DashboardController{
-		private $akun;
+		private $akun,$customer;
 		function __construct()
 		{
 			$this->akun = model('akun');
+			
 			checkIfNotLogin();
+
+			if(Session::sess('admin') == false){
+				redirect('');
+			}
 		}
 		public function index(){
 			$data = [

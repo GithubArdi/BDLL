@@ -26,6 +26,7 @@ $routes['dologin'] = 'LandingController@dologin';
 $routes['register'] = 'LandingController@register';
 $routes['logout'] = 'DashboardController@logout';
 $routes['control-panel'] = 'DashboardController@index';
+$routes['logout'] = 'LandingController@logout';
 
 // dashboard
 

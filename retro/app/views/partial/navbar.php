@@ -9,14 +9,14 @@
 		            <div class="col-sm-12 col-md-5 col-md-pull-2 overflow-hidden-xs">
 		                <ul class="menu inline-block pull-right">
 		                    <li><a href="<?php echo base_url('default') ?>">HOME</a></li>
-		                    <li><a href="#">HISTORY&nbsp;</a>
+		                    <li><a href="#">CONTACT&nbsp;</a>
 		                    </li>
 		                </ul>
 		            </div>
 		            <div class="col-sm-12 col-md-5 pb-xs-24">
 		                <ul class="menu">
 		                    <li><a href="<?php echo base_url('reservasi') ?>">&nbsp;RESERVATION</a></li>
-		                    <li><a href="#">CONTACT</a>
+		                    <li><a href="<?php echo base_url('logout') ?>">&nbsp;Logout</a>
 		                    </li>
 		                </ul>
 		            </div>

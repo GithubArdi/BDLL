@@ -1,54 +1,70 @@
-<?php view('admin/partial/header', $data) ?>
-  <div class="login-box">
-    <div class="login-logo">
-      <a href="<?php echo base_url() ?>"><img src="<?php echo base_url('img/logo.png') ?>" style="max-width: 50px" alt=""></a>
-    </div>
-    <div>
-          <?php echo Session::flash('error'); ?>
-        </div>
-    
-    <div class="login-box-body">
-    
-      <p class="login-box-msg">Register untuk mendapatkan akun</p>
+<?php view('partial/header', $data) ?>
+<div class="main-container">
+  <center>
+  <h3>Register</h3>
+</center>
 
-      <form action="<?php echo base_url('dologin') ?>" method="post">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="Username" name="username">
-          <span class="form-control-feedback"><i class="fa fa-user"></i></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" name="password">
-          <span class="form-control-feedback"><i class="fa fa-lock"></i></span>
-        </div>
-        <div class="row">
-          <div class="col-xs-8">
-            <div class="checkbox icheck">
-              <label>
-                <input type="checkbox"> Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-    </div>
-    <!-- /.login-box-body -->
-    <div class="text-center" style="display: block;margin-top: 10px;">
-      <a href="<?php echo base_url('register') ?>">Belum punya akun? Silahkan daftar disini!</a>
-    </div>
+<form action="" method="POST">
+  <div class="container">
+    <?php echo Session::flash('error'); ?>
+                        <form action="<?php echo base_url('customer/create') ?>" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" name="username" class="form-control" value="<?php echo old('username') ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" name="password" class="form-control" value="<?php echo old('password') ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>No Telepon </label>
+                                <input type="text" name="notlp_customer" class="form-control" value="<?php echo old('notlp_customer') ?>">
+                            </div>
+                             <div class="form-group">
+                                <label>Alamat </label>
+                                <input type="text" name="alamat_customer" class="form-control" value="<?php echo old('alamat_customer') ?>">
+                            </div>
+                             <div class="form-group">
+                                <label>Status</label>
+                                <input type="text" name="status" class="form-control" value="<?php echo old('status') ?>">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Tambah</button>
+                            </div>
   </div>
-  <!-- /.login-box -->
+    <center>
+      <div class="masuk">Punya akun? <a href="login.php">Masuk</a></div>
+    </center>
+</form>
+</div>
 <?php view('admin/partial/footer', $data) ?>
 <script>
-  $(function () {
-  $('input').iCheck({
-    checkboxClass: 'icheckbox_square-blue',
-    radioClass: 'iradio_square-blue',
-    increaseArea: '20%' /* optional */
-  });
+  $(document).ready(function(){
+    $('#inputFoto').change(function(){
+      var foto  = $(this)[0].files[0],
+        label = $('#labelFoto'),
+        nama  = $('#namaFoto');
+
+      if(typeof foto != 'undefined'){
+        if(foto.size > 0){
+          label.text('Ganti foto');
+          label.removeClass('btn-info');
+          label.addClass('btn-warning');
+          nama.text(foto.name);
+          $('.text-foto').show();
+        }
+      }else{
+        label.text('Tambahkan foto');
+        label.addClass('btn-info');
+        label.removeClass('btn-warning');
+        nama.text('');
+        $('.text-foto').hide();
+      }
+    })
   });
 </script>
+
+
+<?php view('partial/footer') ?>
+
+        
