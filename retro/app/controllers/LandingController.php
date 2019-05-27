@@ -5,7 +5,6 @@ class LandingController
 	private $restaurant;
 	private $menu;
 
-
 	function __construct()
 	{
 		$this->akun = model('akun');
@@ -17,7 +16,6 @@ class LandingController
 		$data = [
 			'title' => 'Beranda',
 			'restaurant' => $this->restaurant->getData()
-			// 'menu' => $this->menu->getData()
 		];
 
 		return view('landing/index', $data);

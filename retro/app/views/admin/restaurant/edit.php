@@ -51,6 +51,10 @@
                                 <label>Harga Menu</label>
                                 <input type="text" name="harga_menu" class="form-control" value="<?php echo old('harga_menu') ?>">
                             </div>
+                               <div class="form-group">
+                                <label>Id Owner</label>
+                                <input type="text" name="deskripsi" class="form-control" value="<?php echo old('id_owner') ?>">
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </div>

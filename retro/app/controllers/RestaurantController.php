@@ -26,6 +26,7 @@ class RestaurantController{
             return '<img src="'.base_url($gambar['gambar_resto']).'" width="100"/>';
         })
 		->addRow('Deskripsi','deskripsi')
+        ->addRow('id_owner','id_owner')
 		->addRow('Aksi',function($data){
 			 return '<a href="'.base_url('restaurant/edit/'.$data['id_resto']).'" class="btn btn-warning btn-xs">Edit</a>';
 		})
@@ -37,7 +38,8 @@ class RestaurantController{
 			'jadwal_buka',
 			'jadwal_tutup',
 			'gambar_resto',
-			'deskripsi'
+			'deskripsi',
+            'id_owner'
 		]);
 		$data = [
 				'title' => 'Restaurant',
@@ -75,6 +77,9 @@ class RestaurantController{
                 'required' => true
             ],
             'deskripsi' => [
+                'required' => true
+            ],
+            'id_owner' => [
                 'required' => true
             ],
         ];
