@@ -1,13 +1,14 @@
-<?php view('admin/partial/header', $data) ?>
+<?php view('partial/header', $data) ?>
  <div class="login-box">
   <div class="login-logo">
-   <a href="<?php echo base_url() ?>"><img src="<?php echo base_url('img/logo.png') ?>" style="max-width: 50px" alt=""></a>
+   <a href="<?php echo base_url() ?>"></a>
   </div>
   <div>
          <?php echo Session::flash('error'); ?>
        </div>
-  
-  <div class="login-box-body">
+  <center>
+  <div class="login-box-body" style="background: #fff; width: 20%; margin-top: 100px; margin-bottom: 130px">
+    <h3>RETRO</h3>
    
    <p class="login-box-msg">Login untuk melanjutkan memakai aplikasi</p>
 
@@ -35,14 +36,16 @@
      <!-- /.col -->
     </div>
    </form>
-  </div>
-  <!-- /.login-box-body -->
-  <div class="text-center" style="display: block;margin-top: 10px;">
+   <div class="text-center" style="display: block;margin-top: 10px;">
    <a href="<?php echo base_url('register') ?>">Belum punya akun? Silahkan daftar disini!</a>
   </div>
  </div>
+  </div>
+  <!-- /.login-box-body -->
+  
+ </center>
  <!-- /.login-box -->
-<?php view('admin/partial/footer', $data) ?>
+<?php view('partial/footer', $data) ?>
 <script>
   $(function () {
  $('input').iCheck({

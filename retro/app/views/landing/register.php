@@ -31,10 +31,10 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </div>
+                            <center>
+                              <div class="masuk">Punya akun? <a href="login.php">Masuk</a></div>
+                            </center>
   </div>
-    <center>
-      <div class="masuk">Punya akun? <a href="login.php">Masuk</a></div>
-    </center>
 </form>
 </div>
 <?php view('admin/partial/footer', $data) ?>
