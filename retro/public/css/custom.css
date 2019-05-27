@@ -1,0 +1,22 @@
+ .ordbtt {
+	 background: transparent;
+	 border-radius: 20px;
+	 width: 20%;
+	 color: white; 
+}
+.content{
+	border-collapse: collapse;
+}
+
+.content td{
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.content th{
+	padding: 10px 20px;
+}
+
+.button-container{
+	margin-top: 25px;
+}
