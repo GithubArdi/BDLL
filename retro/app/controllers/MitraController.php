@@ -1,9 +1,9 @@
 <?php
 class MitraController{
-	private $Mitra;
+	private $mitra;
 	function __construct(){
 		checkIfNotLogin();
-		$this->Mitra = model('mitra');
+		$this->mitra = model('mitra');
 	}
 
 	public function index(){
@@ -17,22 +17,22 @@ class MitraController{
 			return $index+1;
 		})
 		->addRow('Username','username')
-		// ->addRow('Password','password')
+		->addRow('Password','password')
 		->addRow('Nama Mitra','nama_mitra')
 		->addRow('No Telepon','no_telp')
-		// ->addRow('Status','status')
+		->addRow('status','status')
 		->addRow('Aksi',function($data){
 			 return '<a href="'.base_url('mitra/edit/'.$data['id_owner']).'" class="btn btn-warning btn-xs">Edit</a>';
 		})
 		->search([
 			'username',
-			// 'password',
+			'password',
 			'nama_mitra',
 			'no_telp',
-			// 'status'
+			'status'
 		]);
 		$data = [
-				'title' => 'Mitra',
+				'title' => 'mitra',
 				'tabel' => $tabel->run()
 		];
 
@@ -51,24 +51,24 @@ class MitraController{
             'username' => [
                 'required' => true
             ],
-            // 'password' => [
-            //     'required' => true
-            // ],
+            'password' => [
+                'required' => true
+            ],
             'nama_mitra' => [
                 'required' => true
             ],
              'no_telp' => [
                 'required' => true
             ],
-            //  'status' => [
-            //     'required' => true
-            // ],
+             'status' => [
+                'required' => true
+            ],
         ];
 
         $valid = new Validation($config);
 
         if($valid->run()){
-            $this->Mitra->tambah();
+            $this->mitra->tambah();
 
             redirect('control-panel/mitra/add');
         }else{
