@@ -24,15 +24,22 @@ class LandingController
 		return view('landing/index', $data);
 	}
 	function restaurant($id){
+		$restaurant = $this->restaurant->getItem($id);
+		if ($restaurant === false){
+			abort(404);
+		}
 		$data = [
 			'title' => 'Restaurant',
 			'appetizer' => $this->menu->getDataByIdRestoAndCategory($id, 'appetizer'),
 			'maincourse' => $this->menu->getDataByIdRestoAndCategory($id, 'maincourse'),
 			'dessert' => $this->menu->getDataByIdRestoAndCategory($id, 'dessert'),
+			'item' => $restaurant
 		];
 
 		return view('landing/home', $data);
 	}
+
+
 	function pesan(){
 		return view('landing/pesan');
 	}
