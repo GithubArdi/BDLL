@@ -21,7 +21,7 @@
      <input type="password" class="form-control" placeholder="Password" name="password">
      <span class="form-control-feedback"><i class="fa fa-lock"></i></span>
     </div>
-    <div class="row">
+    <div class="row" style="padding-right: 100px">
      <div class="col-xs-8">
       <div class="checkbox icheck">
        <label>
