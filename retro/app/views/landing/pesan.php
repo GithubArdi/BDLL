@@ -1,18 +1,5 @@
 <?php view('partial/header', $data) ?>
 		<div class="main-container">
-		<section class="cover fullscreen image-bg overlay parallax">
-		        <div class="background-image-holder">
-		            <img alt="image" class="background-image" src="img/indonesia.jpg">
-		        </div>
-		        <div class="container v-align-transform">
-		            <div class="row">
-		                <div class="col-sm-12 text-center">
-		                    <h1 class="large uppercase mb16">WELCOME TO<br>SAMICOS RESTAURANT</h1>
-		                    <h5 class="uppercase mb0">RESERVATION OF RESTAURANT</h5>
-		                </div>
-		            </div>
-		        </div>
-		    </section>
 		    <section>
 		        <div class="container">
 		           	<div class="row" align="center">
