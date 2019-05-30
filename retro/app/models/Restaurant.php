@@ -53,4 +53,20 @@ class Restaurant{
             return false;
         }
     }
+      public function getItem($id){
+        try {
+            $sql = "SELECT * FROM tb_resto WHERE id_resto = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }
