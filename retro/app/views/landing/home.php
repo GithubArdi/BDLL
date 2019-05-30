@@ -2,7 +2,7 @@
 		<div class="main-container">
 		<section class="cover fullscreen image-bg overlay parallax">
 		        <div class="background-image-holder">
-		            <img alt="image" class="background-image" src="<?php echo base_url('gambar_resto') ?>">
+		            <img alt="image" class="background-image" src="<?php echo base_url($item->gambar_resto) ?>">
 		        </div>
 		        <div class="container v-align-transform">
 		            <div class="row">

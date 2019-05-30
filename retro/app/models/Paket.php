@@ -27,4 +27,23 @@ class Paket{
             redirect('control-panel/mitra/add');
         }
     }
+    public function hapus(){
+        try{
+            DB::connection()->beginTransaction();
+            $id = Input::post('slug');
+            $sql = "DELETE FROM paket WHERE id=?";
+            $prep = DB::connection()->prepare($sql);
+            $prep -> execute(['$id']);
+            if($prep->rowCount()){
+                msg('Data Berhasil Dihapus', 'info');
+            }else{
+                msg('Data Gagal Dihapus', 'danger');
+            }
+            DB::connection()->commit();
+        }catch(PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(),'danger');
+            redirect('control-panel/paket');
+        }
+    }
 }

@@ -14,9 +14,7 @@
 		                            <p class="text-justify mb0"> </p>
 		                        </div>
 		                    </div>
-		                    
 		                </div>
-		                
 		            </li><li class="overlay image-bg">
 		                <div class="background-image-holder">
 		                    <img alt="image" class="background-image" src="img/background4.jpg">
@@ -29,9 +27,7 @@
 		                            <p class="text-justify mb0"> </p>
 		                        </div>
 		                    </div>
-		                    
-		                </div>
-		                
+		                </div> 
 		            </li><li class="overlay image-bg">
 		                <div class="background-image-holder">
 		                    <img alt="image" class="background-image" src="img/background3.jpg">

@@ -24,6 +24,7 @@ class PaketController{
 		// ->addRow('Gambar Paket','gambar_paket')
 		->addRow('Aksi',function($data){
 			 return '<a href="'.base_url('paket/edit/'.$data['id_paket']).'" class="btn btn-warning btn-xs">Edit</a>';
+             return '<a href="'.base_url('paket/edit/'.$data['id_paket']).'" class="btn btn-warning btn-xs">Hapus</a>';
 		})
 		->search([
 			'id_paket',

@@ -18,6 +18,6 @@
                 <?php echo $tabel ?>
             </div>
         </div>
-        <!-- disini taruh kontennya anjing  -->
+        <!-- disini taruh kontennya  -->
     </section>
 <?php view('admin/partial/footer', $data) ?>
