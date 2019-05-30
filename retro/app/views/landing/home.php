@@ -177,11 +177,8 @@
 		                <div class="col-sm-12 text-center">
 		                    <h3 class="uppercase mb0">DESSERT</h3>
 		                </div>
-		            </div>
-		            
-		        </div>
-		        
-		        
+		            </div>	            
+		        </div>   
 		    </section><section class="projects pt48">
 		        <div class="container">
 		            <div class="row pb24">
