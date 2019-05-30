@@ -5,14 +5,12 @@ class PaketController{
 		checkIfNotLogin();
 		$this->Paket = model('paket');
 	}
-
 	public function index(){
 		$tabel = new Table([
 			'query' => [
 				'sql' => 'SELECT * FROM tb_paket'
 			]
 		]);
-
 		$tabel->addRow('No',function($data,$index){
 			return $index+1;
 		})

@@ -5,22 +5,25 @@ class LandingController
 	private $restaurant;
 	private $menu;
 	private $customer;
+	private $keranjang;
+	private $pesan;
+	// private $order;
 	function __construct()
 	{
 		$this->akun = model('akun');
 		$this->restaurant = model('restaurant');
 		$this->menu = model('menu');
 		$this->customer = model('customer');
+		$this->keranjang = model('keranjang');
+		$this->pesan = model('pesan');
+		// $this->order = model('order');
 	}
-
 	function index(){
 		checkIfNotLogin();
-
 		$data = [
 			'title' => 'Beranda',
 			'restaurant' => $this->restaurant->getData()
 		];
-
 		return view('landing/index', $data);
 	}
 	function restaurant($id){
@@ -38,11 +41,34 @@ class LandingController
 
 		return view('landing/home', $data);
 	}
+	function menu($id){
+		$menu = $this->menu->getById($id);
+		if ($menu === false){
+			abort(404);
+		}
 
+		$this->keranjang->tambah($id);
+
+		// $this->menu->tambahPesanan($menu->id)
+		redirect('restaurant/'.$menu->id_resto);
+	}
 
 	function pesan(){
-		return view('landing/pesan');
+		$data = [
+			'title' => 'Pesanan',
+			'pesan' => $this->pesan->getData(),
+		];
+
+		return view('landing/pesan', $data);
 	}
+	// function order(){
+	// 	$data = [
+	// 		'title' => 'Order',
+	// 		'pesan' => $this->pesan->hapus(),
+	// 	];
+
+	// 	return view('landing/pesan', $data);
+	// }
 	function reservasi(){
 		return view('landing/reservasi');
 	}
@@ -52,50 +78,14 @@ class LandingController
 	function konfpesan(){
 		return view('landing/konfpesan');
 	}
-
-	// function whysimponi(){
-	//     $data = [
-	//         'title' => 'Kenapa milih simponi. ?'
- //        ];
-	//     return view('landing/whysimponi', $data);
- //    }
- //    function kontak(){
- //    	$data = [
- //    		'title' => 'Kontak Kami'
- //    	];
- //    	return view('landing/kontakkami', $data);
- //    }
- //    function blog(){
- //    	$data = [
- //    		'title' => 'blog'
- //    	];
- //    	return view('landing/blog', $data);
- //    }
- //    function edukasi(){
- //    	$data = [
- //    		'title' => 'edukasi'	
- //    	];
- //    	return view('landing/edukasi', $data);
- //    }
- //    function marketplace(){
- //    	$data = [
- //    		'tittle' => 'marketplace'
- //    	];
- //    	return view('landing/marketplace',$data);
- //    }
-
-
-
 	function login(){
 		checkIfLogin();
-
 		$data = [
 			'title' => 'Login',
 			'panel' => false
 		];
 		return view('landing/login', $data);
 	}
-
 	function doLogin(){
 		checkIfLogin();
 		
@@ -123,6 +113,7 @@ class LandingController
 			else if ($this->customer->login($user, $pass)){
 				Session::sess('admin', false);
 				Session::sess('login', true);
+				Session::sess('id_customer', true);
 				redirect('');
 			}
 			else{
@@ -134,7 +125,6 @@ class LandingController
 			redirect('login');
 		}
 	}
-
 	function register(){
         checkIfLogin();
 

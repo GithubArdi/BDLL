@@ -34,6 +34,7 @@ class Menu{
             redirect('control-panel/menu/add');
         }
     }
+
         function getById($id){
         try {
             $sql = "SELECT 
@@ -63,9 +64,7 @@ class Menu{
             if($prep->rowCount()){
                 return $prep->fetchAll(PDO::FETCH_OBJ);
             }
-
             return false;
-
         } catch (PDOException $e) {
             return false;
         }
@@ -93,16 +92,41 @@ class Menu{
             $sql = "SELECT * FROM tb_menu WHERE id_resto = ? AND jenis_menu = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id, $jenis_menu]);
+            if($prep->rowCount()){
+                return $prep->fetchAll(PDO::FETCH_OBJ);
+            }
+            return false;
+        } catch (PDOException $e) {
+            return false;
+        }
+    } 
+    public function getDataByIdMenu($id){
+        try {
+            $sql = "SELECT * FROM tb_menu WHERE id_menu = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
 
             if($prep->rowCount()){
                 return $prep->fetchAll(PDO::FETCH_OBJ);
             }
-
             return false;
 
         } catch (PDOException $e) {
             return false;
         }
     }
-    
+    public function getItem($id){
+        try {
+            $sql = "SELECT * FROM tb_resto WHERE id_resto = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+            return false;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }   
 }

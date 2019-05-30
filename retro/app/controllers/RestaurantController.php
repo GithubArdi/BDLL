@@ -5,14 +5,12 @@ class RestaurantController{
 		checkIfNotLogin();
 		$this->Restaurant = model('restaurant');
 	}
-
 	public function index(){
 		$tabel = new Table([
 			'query' => [
-				'sql' => 'SELECT * FROM tb_resto'
+			'sql' => 'SELECT * FROM tb_resto'
 			]
 		]);
-        
 		$tabel->addRow('No',function($data,$index){
 			return $index+1;
 		})
@@ -83,9 +81,7 @@ class RestaurantController{
                 'required' => true
             ],
         ];
-
         $valid = new Validation($config);
-
         if($valid->run()){
             $this->Restaurant->tambah();
 
@@ -95,7 +91,6 @@ class RestaurantController{
             redirect('control-panel/restaurant/add');
         }
     }
-
     function edit($id_resto){
         $restaurant = $this->restaurant->getById($id_resto);
 

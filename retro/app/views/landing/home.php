@@ -13,7 +13,7 @@
 		            </div> 
 		        </div>
 		        <div class="align-bottom relative-xs text-center">
-		            <a class="btn btn-filled btn-lg mb32 mt-xs-40" href="<?php echo base_url('pesan') ?>">ORDER</a><a class="btn btn-filled btn-lg mb32 mt-xs-40" href="<?php echo base_url('reservasi') ?>">RESERVE</a>
+		            <a class="btn btn-filled btn-lg mb32 mt-xs-40" href="<?php echo base_url('pesan') ?>">ORDER</a><a class="btn btn-filled btn-lg mb32 mt-xs-40" href="<?php echo base_url('konfreservasi') ?>">RESERVE</a>
 		        </div>
 		    </section>
 		    <section>
@@ -65,13 +65,13 @@
 		            	<?php foreach ($appetizer as $item) { ?>
 		                <div class="col-md-4 col-sm-6 masonry-item project" data-filter="">
 		                    <div class="image-tile inner-title hover-reveal text-center">
-		                        <a href="#">
+		                        <a href="<?php echo base_url($item->id_menu)?>">
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
 		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
-		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
+		                               	<a href="<?php echo base_url("pesan/menu/".$item->id_menu)?>"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
 		                        </a>
 		                    </div>
@@ -100,7 +100,6 @@
 		                    </ul>
 		                </div>
 		            </div>
-		            
 		            <div class="row masonry-loader">
 		                <div class="col-sm-12 text-center">
 		                    <div class="spinner"></div>
@@ -110,13 +109,13 @@
 		                <?php foreach ($maincourse as $item) { ?>
 		                <div class="col-md-4 col-sm-6 masonry-item project" data-filter="">
 		                    <div class="image-tile inner-title hover-reveal text-center">
-		                        <a href="#">
+		                        <a href="<?php echo base_url("pesan/menu/".$item->id_menu)?>">
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
 		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
-		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
+		                               	<a href="<?php echo base_url("pesan/menu/".$item->id_menu)?>"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
 		                        </a>
 		                    </div>
@@ -126,48 +125,7 @@
 		            
 		        </div>
 		        
-		    </section><!-- <section class="page-title page-title-3 image-bg overlay parallax">
-		        <div class="background-image-holder">
-		            <img alt="Background Image" class="background-image" src="<?php echo base_url('img/bg.jpg') ?>">
-		        </div>
-		        <div class="container">
-		            <div class="row">
-		                <div class="col-sm-12 text-center">
-		                    <h3 class="uppercase mb0">DESSERT</h3>
-		                </div>
-		            </div>
-		            
-		        </div>
-		        
-		        
-		    </section><section class="projects pt48">
-		        <div class="container">
-		            <div class="row pb24">
-		                <div class="col-sm-12 text-center">
-		                    <ul class="filters mb0">
-		                    </ul>
-		                </div>
-		            </div>
-		            
-		            <div class="row masonry-loader">
-		                <?php foreach ($dessert as $item) { ?>
-		                <div class="col-md-4 col-sm-6 masonry-item project" data-filter="">
-		                    <div class="image-tile inner-title hover-reveal text-center">
-		                        <a href="#">
-		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
-		                            <div class="title">
-		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
-		                                <span><?php echo $item->harga_menu ?></span>
-		                                <br>
-		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
-		                            </div>
-		                        </a>
-		                    </div>
-		                </div>
-		                <?php } ?>
-		            </div>		            
-		        </div>
-		    </section> -->
+		    </section>
 		    <section class="page-title page-title-3 image-bg overlay parallax">
 		        <div class="background-image-holder">
 		            <img alt="Background Image" class="background-image" src="<?php echo base_url('img/bg.jpg') ?>">
@@ -197,13 +155,13 @@
 		                <?php foreach ($dessert as $item) { ?>
 		                <div class="col-md-4 col-sm-6 masonry-item project" data-filter="">
 		                    <div class="image-tile inner-title hover-reveal text-center">
-		                        <a href="#">
+		                        <a href="<?php echo base_url($item->id_menu)?>">
 		                            <img alt="Pic" src="<?php echo base_url($item->gambar_menu) ?>">
 		                            <div class="title">
 		                                <h5 class="uppercase mb0"><?php echo $item->nama_menu ?></h5>
 		                                <span>Rp.<?php echo $item->harga_menu ?></span>
 		                                <br>
-		                               	<a href="#"><button class="ordbtt" type="button">Order</button></a>
+		                               	<a href="<?php echo base_url("pesan/menu/".$item->id_menu)?>"><button class="ordbtt" type="button">Order</button></a>
 		                            </div>
 		                        </a>
 		                    </div>

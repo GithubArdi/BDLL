@@ -18,6 +18,7 @@ Yang ini routes default
 $routes['default'] = 'LandingController@index';
 $routes['restaurant/:id'] = 'LandingController@restaurant';
 $routes['pesan'] = 'LandingController@pesan';
+$routes['pesan/menu/:id'] = 'LandingController@menu';
 $routes['reservasi'] = 'LandingController@reservasi';
 $routes['konfreservasi'] = 'LandingController@konfreservasi';
 $routes['konfpesan'] = 'LandingController@konfpesan';

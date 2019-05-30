@@ -27,19 +27,21 @@
 		                        		<th>Jumlah</th>
 		                        		<th>Sub Total</th>
 		                        	</tr>
-		                        	<tr style="margin-top: px;">
-		                        		<td><a href="#">Hapus</a></td>
-		                        		<td>Nasi Goreng</td>
-		                        		<td>Rp.20.000</td>
-		                        		<td>3</td>
-		                        		<td>Rp.30.000</td>
-		                        	</tr>
+		                        	<?php foreach ($pesan as $key => $value) { ?>
+		                        		<tr style="margin-top: px;">
+			                        		<td><a href="#">Hapus</a></td>
+			                        		<td><?php echo $value->nama_menu ?></td>
+			                        		<td>Rp <?php echo number_format($value->harga_menu, 2, ',', '.') ?></td>
+			                        		<td><?php echo $value->jumlah ?></td>
+			                        		<td>Rp. <?php echo $value->jumlah * $value->harga_menu ?></td>
+			                        	</tr>
+		                        	<?php } ?>
 		                        	
 		                        	<tr style="">
 		                        		<td colspan="5" style="">
 		                        			<div class="row">
 		                        				<div class="button-container">
-		                        					<div class="col-md-6"><button type="submit">Update</button></div>	
+		                        					<div class="col-md-6"></div>	
 		                        					<div class="col-md-6">
 		                        						<form action="<?php echo base_url('konfpesan') ?>"">
 		                        							<button type="submit">Confirm</button>
