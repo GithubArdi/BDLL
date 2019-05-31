@@ -16,6 +16,9 @@ Yang ini routes default
 
 */
 $routes['default'] = 'LandingController@index';
+$routes['register'] = 'RegisterController@add';
+$routes['doregister'] = 'RegisterController@create';
+// $routes['register/:id'] = 'LandingController@register';
 $routes['restaurant/:id'] = 'LandingController@restaurant';
 $routes['pesan'] = 'LandingController@pesan';
 $routes['pesan/menu/:id'] = 'LandingController@menu';
@@ -24,7 +27,6 @@ $routes['konfreservasi'] = 'LandingController@konfreservasi';
 $routes['konfpesan'] = 'LandingController@konfpesan';
 $routes['login'] = 'LandingController@login';
 $routes['dologin'] = 'LandingController@dologin';
-$routes['register'] = 'LandingController@register';
 $routes['logout'] = 'DashboardController@logout';
 $routes['control-panel'] = 'DashboardController@index';
 $routes['logout'] = 'LandingController@logout';

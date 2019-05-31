@@ -4,10 +4,9 @@
   <h3>Register</h3>
 </center>
 
-<form action="" method="POST">
   <div class="container" style="width: 30%;">
     <?php echo Session::flash('error'); ?>
-                        <form action="<?php echo base_url('customer/create') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('doregister') ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" name="username" class="form-control" value="<?php echo old('username') ?>">

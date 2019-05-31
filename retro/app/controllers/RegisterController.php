@@ -2,15 +2,16 @@
 class RegisterController{
 	private $register;
 	function __construct(){
-		checkIfNotLogin();
 		$this->register = model('register');
 	}
+
 	function add(){
         $data = [
-            'title' => 'Tambah Customer'
+            'title' => 'Register'
         ];
-        return view('views/register', $data);
+        return view('landing/register', $data);
     }
+
     function create(){
          $config = [
             'username' => [
@@ -28,7 +29,6 @@ class RegisterController{
              'status' => [
                 'required' => true
             ],
-
         ];
 
         $valid = new Validation($config);
@@ -36,9 +36,10 @@ class RegisterController{
         if($valid->run()){
             $this->register->tambah();
 
-            redirect('views/register');
+            redirect('register');
         }else{
             msg($valid->getErrors(), 'danger');
-            redirect('views/register');
+            redirect('register');
         }
     }
+}

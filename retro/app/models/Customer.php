@@ -13,8 +13,7 @@ class Customer{
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$username, $password, $notlp_customer, $alamat_customer, $status]);
-
-
+            
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
             }else{

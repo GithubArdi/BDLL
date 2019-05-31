@@ -30,7 +30,7 @@
 		                        				<div class="button-container">
 		                        					<div class="col-md-6"></div>	
 		                        					<div class="col-md-6">
-		                        						<form action="<?php echo base_url('konfpesan') ?>"">
+		                        						<form action="<?php echo base_url('#') ?>"">
 		                        							<button type="submit">Confirm</button>
 		                        						</form>
 		                        					</div>
